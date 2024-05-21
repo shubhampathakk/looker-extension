@@ -1,9 +1,10 @@
-project_name: "helloworld-js"
+project_name: "hello_test"
 
-application: helloworld-js {
-  label: "Helloworld (JavaScript)"
+application: hello_test {
+  label: "hello_test"
   url: "https://localhost:8080/bundle.js"
+  # file: "bundle.js
   entitlements: {
-    core_api_methods: ["me"]
+    core_api_methods: ["me"] #Add more entitlements here as you develop new functionality
   }
 }
