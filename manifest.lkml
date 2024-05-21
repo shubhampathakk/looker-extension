@@ -5,5 +5,6 @@ application: helloworld-js {
   url: "https://localhost:8080/bundle.js"
   entitlements: {
     core_api_methods: ["me"]
+    use_embeds: yes
   }
 }
