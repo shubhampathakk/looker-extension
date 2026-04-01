@@ -1,9 +1,11 @@
-project_name: "helloworld-js"
+project_name: "helloworld-ts"
 
-application: helloworld-js {
-  label: "Helloworld (JavaScript)"
-  url: "https://localhost:8080/bundle.js"
+application: helloworld-ts {
+  label: "Helloworld (TypeScript)"
+  #url: "https://localhost:8080/bundle.js"
+  file: "bundle.js"
   entitlements: {
     core_api_methods: ["me"]
+    use_embeds: yes
   }
 }
