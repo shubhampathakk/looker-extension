@@ -4,7 +4,7 @@ view: orders {
   dimension: id {
     primary_key: yes
     type: number
-    sql: ${TABLE}.id ;;
+    sql: ${TABLE}.order_id;;
   }
 
   dimension_group: created {
