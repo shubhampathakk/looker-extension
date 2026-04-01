@@ -1,29 +1,28 @@
-- dashboard: ecommerce_kpi_dashboard
-  title: Ecommerce KPI Dashboard
+- dashboard: expanded_ecommerce_performance
+  title: Expanded E-commerce Performance
   layout: newspaper
+  tile_size: 100
+
+  filters:
+  - name: date_filter
+    title: "Date Range"
+    type: date_filter
+    default_value: last 30 days
+
   elements:
-    - name: total_orders
-      title: Total Orders
+    - name: total_sales
+      title: Total Sales Revenue
       model: thelook_ecommerce
-      explore: orders
+      explore: order_items
       type: single_value
-      fields: [orders.count]
-      limit: 500
+      fields: [order_items.total_sales]
+      filters:
+        orders.created_date: '30 days'
 
-    - name: orders_by_status
-      title: Orders by Status
+    - name: sales_by_category
+      title: Sales by Category
       model: thelook_ecommerce
-      explore: orders
+      explore: order_items
       type: looker_pie
-      fields: [orders.status, orders.count]
-      sorts: [orders.count desc]
-      limit: 500
-
-    - name: orders_over_time
-      title: Orders Over Time
-      model: thelook_ecommerce
-      explore: orders
-      type: looker_line
-      fields: [orders.created_month, orders.count]
-      sorts: [orders.created_month]
-      limit: 500
+      fields: [products.category, order_items.total_sales]
+      sorts: [order_items.total_sales desc]
