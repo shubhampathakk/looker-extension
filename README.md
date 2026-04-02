@@ -1,6 +1,6 @@
 # looker-extension
 
-# 🚀 Client Pitch Guide: Modernized Looker Embedding
+# 🚀 Guide: Modernized Looker Embedding
 
 Use this guide to explain the advanced features we built for your portal to stakeholders and customers.
 
