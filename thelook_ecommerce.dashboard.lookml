@@ -23,8 +23,8 @@
       explore: order_items
       type: single_value
       fields: [order_items.total_sales]
-      filters:
-        orders.created_date: '30 days'
+      listen:
+        date_filter: orders.created_date
 
     - name: sales_by_category
       title: Sales by Category
