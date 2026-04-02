@@ -1,5 +1,3 @@
-# looker-extension
-
 # 🚀 Guide: Modernized Looker Embedding
 
 Use this guide to explain the advanced features we built for your portal to stakeholders and customers.
@@ -54,6 +52,20 @@ Use this guide to explain the advanced features we built for your portal to stak
       updateReactState(data.filters);
     }
   });
+  ```
+
+---
+
+## 🖼️ 6. Resilient Iframe Orchestration
+- **What it is**: Hard-loading the Looker iframe using React keys to prevent caching bugs when hot-swapping dashboards or theme contexts.
+- **Pitch**: *"Switch between dashboards and themes instantly without weird visual anomalies or old data sticking around."*
+- **Code Snippet (Reactivity Keying)**:
+  ```javascript
+  <iframe
+    key={`${dashboardId}-${refreshKey}`}
+    src={embedUrl}
+    className="w-full h-full border-0"
+  />
   ```
 
 ---
