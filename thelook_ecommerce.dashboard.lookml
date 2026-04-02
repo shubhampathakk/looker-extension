@@ -9,6 +9,13 @@
     type: date_filter
     default_value: last 30 days
 
+  - name: category_filter
+    title: "Product Category"
+    type: field_filter
+    model: thelook_ecommerce
+    explore: order_items
+    field: products.category
+
   elements:
     - name: total_sales
       title: Total Sales Revenue
@@ -26,3 +33,16 @@
       type: looker_pie
       fields: [products.category, order_items.total_sales]
       sorts: [order_items.total_sales desc]
+      listen:
+        category_filter: products.category
+
+    - name: orders_by_status
+      title: Orders by Status
+      model: thelook_ecommerce
+      explore: order_items
+      type: looker_bar
+      fields: [orders.status, orders.count]
+      sorts: [orders.count desc]
+      listen:
+        date_filter: orders.created_date
+        category_filter: products.category
